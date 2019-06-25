@@ -1,0 +1,55 @@
+.partners
+	&-cont
+		background: var(--backgroundColor)
+		padding: 70px 0 80px 
+
+	&-title
+		font-size: rem(26)
+		font-weight: 500
+
+	&-top
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 40px
+
+		.swiper-button-next
+			margin-left: 20px
+
+	&-arrow
+		display: flex
+
+	&-item
+		display: flex
+		align-items: center
+		background: #fff
+		padding: 20px 45px
+		flex: 1 1 auto
+
+		&__img
+			flex: none
+			margin-right: 30px
+
+	.swiper
+
+		&-slide
+			display: flex
+			flex-direction: column
+			height: auto !important
+
+@media screen and (max-width: 1500px)
+
+	.partners
+		&-cont
+			padding: 30px 0 40px
+
+		&-top 
+			margin-bottom: 15px
+
+@media screen and (max-width: 1200px)
+
+	.partners-item
+		padding: 10px
+
+		&__img
+			margin-right: 15px

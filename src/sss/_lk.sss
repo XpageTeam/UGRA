@@ -1,0 +1,760 @@
+.lk
+	display: flex
+
+	&-aside
+		margin-right: 80px
+		flex: 1 1 auto
+
+
+		&__links
+			background: var(--backgroundColor)
+			position: sticky
+			top: 10px
+
+		&__link
+			display: block
+			padding: 22px 45px
+			transition: background .3s ease, color .3s ease
+
+
+			&.active, &:hover 
+				background: var(--mainColor)
+				color: #fff
+
+	&-cont
+		width: calc(100% - 480px) 
+
+		&-title
+			display: flex
+			justify-content: space-between
+			margin-bottom: 35px
+
+			span
+				font-size: rem(22)
+				font-weight: 600
+
+			.convert
+				position: relative
+				line-height: 1
+				display: flex
+				align-items: center
+
+				&:before 
+					content: ''
+					display: inline-block
+					margin-right: 15px
+					size: 24px
+					background-color: var(--secondColor)
+					border-radius: 50%
+					background-image: url('../img/ico-group.svg')
+					background-position: center
+					background-repeat: no-repeat
+
+	&-treatment
+		&__list
+			margin-bottom: -40px
+
+		&__item
+			border: 1px solid var(--backgroundColor)
+			margin-bottom: 40px
+
+			&-top
+				display: flex 
+				justify-content: space-between
+				padding: 20px 50px
+				background: var(--backgroundColor)
+
+			&-title
+				font-size: rem(16)
+				font-weight: 600
+
+			&-info
+				&-cont
+					padding: 30px 50px
+
+			&-docs
+				a 
+					display: block
+
+					&:hover 
+						color: var(--secondColor)
+				> *
+					&:not(:first-child)
+						margin-top: 10px
+		&__info
+			display: flex 
+			justify-content: space-between
+			color: #9BAABB
+			font-size: rem(14)
+			margin-bottom: 10px
+
+	.status
+		position: relative
+		display: flex
+		align-items: center
+		line-height: 1
+
+		span
+			position: relative
+			size: 26px
+			border-radius: 50%
+			display: inline-block
+			margin-right: 13px
+			flex: none
+
+
+		&--completed
+
+			span
+				background: #E1E7ED
+
+				&:after 
+					content: ''
+					position: absolute
+					size: 4px 10px
+					transform: rotate(45deg)
+					display: block
+					position: absolute
+					left: calc(50% - 2px)
+					top: calc(50% - 5px)
+					border-right: 1px solid #000 
+					border-bottom: 1px solid #000
+
+		&--expertiza-completed
+			span
+				background: #92CE83
+
+				&:after 
+					content: ''
+					position: absolute
+					size: 4px 10px
+					transform: rotate(45deg)
+					display: block
+					position: absolute
+					left: calc(50% - 2px)
+					top: calc(50% - 5px)
+					border-right: 1px solid #fff 
+					border-bottom: 1px solid #fff
+
+		&--support-no 
+			span
+				background-color: #EB4646
+				background-image: url('../img/ico-cross.svg')
+				background-position: center
+				background-repeat: no-repeat
+
+		&--await
+			span
+				background-color: #C39367
+				background-image: url('../img/ico-refresh.svg')
+				background-position: center
+				background-repeat: no-repeat
+
+
+	&-treatment-no
+		background: var(--backgroundColor)
+		padding: 65px 80px 80px
+
+
+		&__title 
+			font-size: rem(18)
+			font-weight: 600
+			margin-bottom: 25px
+
+		&__btn 
+			margin-top: 35px
+
+
+.support
+	border: 1px solid var(--backgroundColor)
+	margin-top: 38px
+	padding: 50px 65px
+
+
+	&-num
+		font-size: rem(16)
+		font-weight: 600
+		margin-bottom: 25px
+
+	&-checkbox
+		margin-top: 25px
+
+		.form-wrap
+			display: flex
+			flex-direction: column
+			justify-content: flex-start
+			align-items: flex-start
+
+		&__title
+			font-size: rem(16)
+			line-height: rem(20)
+			font-weight: 600
+			margin-bottom: 20px
+
+	.forms-checkbox
+		display: inline-block
+
+		&:not(:first-child)
+			margin-top: 15px
+
+	&-form
+		margin-top: 32px
+
+		.forms__input-cont
+			width: calc((100% - 40px * 3) / 3)
+			margin: 0 0 25px 40px 
+
+			&.forms__input-cont--textarea
+				width: calc((100% - 40px * 2) / 2) 
+
+				textarea 
+					min-height: 130px
+					padding: 10px 30px
+
+
+
+	&-form
+		&__title
+			font-size: rem(22)
+			font-weight: 600
+			margin-bottom: 28px
+
+		.forms__submit-cont
+			margin-top: 50px
+
+.personal-data
+
+	.forms__input-cont
+		width: calc((100% - 40px * 3) / 3)
+		margin: 0 0 25px 40px
+
+	&-pass
+		margin-top: 50px
+
+		.forms
+			&__title
+				font-size: rem(22)
+				font-weight: 600
+				margin-bottom: 20px
+
+			&__text 
+				color: #9BAABB
+				font-size: rem(14)
+				max-width: 600px
+				margin-bottom: 20px
+
+			&-submit-cont
+				margin-top: 50px
+
+
+.personal-user
+	margin-top: 55px
+
+	&__top
+		margin-bottom: 45px
+		display: flex
+		justify-content: space-between
+
+	.title
+		font-size: rem(22)
+		font-weight: 600
+
+	.add-user__link
+		position: relative
+		display: flex
+		align-items: center
+		line-height: 1
+
+		&:before 
+			content: ''
+			display: inline-block
+			size: 24px
+			border-radius: 50%
+			background-color: var(--secondColor)
+			background-image: url('../img/ico-plus.svg')
+			background-position: center
+			background-repeat: no-repeat
+			margin-right: 15px
+
+	&__info
+		display: flex
+		flex-direction: column
+		flex: 1 1 auto
+
+	&__photo
+		flex: none
+		margin-right: 32px
+
+	&__close
+		display: block
+		size: 16px
+		background: url('../img/ico-cross.svg') no-repeat center
+		background-size: contain !important
+		flex: none
+		margin-left: 80px
+
+		.ico
+			size: 10px
+
+	&__item
+		display: flex
+
+		&:not(:first-child)
+			margin-top: 40px
+
+	.bot
+		display: flex
+		flex: 1 1 auto
+		justify-content: space-between
+
+	.user-name
+		font-size: rem(16)
+		font-weight: 600
+
+	.label
+		font-size: rem(14)
+		color: #9BAABB
+		margin-bottom: 10px
+
+	.item
+		&:not(:last-child)
+			margin-right: rem(80)
+
+		a, span
+			font-size: rem(14)
+
+.support
+	&-search
+		color: #fff
+		background-image: url('../img/soti-bg.png')
+		background-repeat: no-repeat
+		background-position: center
+		background-color: var(--mainColor)
+		padding: 65px 65px 85px 85px
+		border: 8px solid #58301E
+
+		&__title
+			font-size: rem(22)
+			font-weight: 600
+			margin-bottom: 20px
+
+			+ .support-search__title
+				margin-top: 50px
+
+		&__input
+			display: flex 
+
+			&-cont
+				position: relative
+				margin-top: 70px
+
+		.label
+			font-size: rem(18)
+			font-weight: 600
+			margin-bottom: 25px
+			display: block
+
+		.input
+			max-width: 490px
+			width: 100%
+			border-radius: 50px
+			height: 45px
+			border: 0
+			padding: 0 25px
+			margin-right: 43px
+
+		.submit
+			border-radius: 25px
+			border: 0
+			line-height: 1
+
+
+	&-title
+		font-size: rem(26)
+		font-weight: 600
+		margin-bottom: 40px
+
+
+
+.lk-events
+	&__item
+		border: 1px solid var(--backgroundColor)
+		margin-top: 40px
+
+		&.js__open
+			.lk-events__item-btn:before
+				transform: rotate(180deg)
+
+
+		&-top
+			background: var(--backgroundColor)
+			padding: 20px 50px
+			display: flex
+			justify-content: space-between
+			align-items: center
+
+		&-title
+			font-size: rem(16)
+			font-weight: 600
+
+		&-date
+			padding: 10px 15px
+			border-radius: 18px
+			background: #E5EBF0
+			color: #9BAABB
+			font-size: rem(13)
+			line-height: 1
+			margin-left: 20px
+
+			&.active
+				background: var(--secondColor)
+				color: #fff
+
+		&-next
+			display: none
+
+		&-info
+			padding: 30px 50px
+
+		&-bot
+			display: flex
+			align-items: flex-start
+			margin-top: 20px
+
+		&-btn
+			position: relative
+			display: flex 
+			align-items: center
+			line-height: 1
+			cursor: pointer
+
+			&:before 
+				content: ''
+				display: inline-block
+				margin-right: 15px
+				size: 30px
+				border-radius: 50%
+				background-color: var(--secondColor)
+				flex: none
+				background-image: url('../img/ico-arrow.svg')
+				background-repeat: no-repeat
+				background-position: center
+				transition: transform .3s ease
+
+
+.auth
+	.forms__input-cont
+		width: calc((100% - 40px * 4) / 4)
+		margin: 0 0 25px 40px
+
+	.forms__submit-cont
+		margin-top: 65px
+
+.registration
+	.forms
+		&-wrap 
+			&:not(:first-child)
+				margin-top: 40px
+				
+		&-radio
+			margin: 0 0 25px 40px
+
+		&__input-cont
+			margin: 0 0 25px 40px
+			width: calc((100% - 40px * 4) / 4)
+
+		&__info
+			max-width: 450px
+			margin-left: 40px
+
+			a 
+				color: #C39367
+
+@media screen and (max-width: 1500px)
+
+	.lk
+		&-aside
+			margin-right: 40px
+
+		&-treatment
+			&-no
+				padding: 45px 50px
+
+		&-cont-title
+			margin-bottom: 20px
+
+	.support-search
+		padding: 50px
+
+		&__title+.support-search__title
+			margin-top: 25px
+
+		&__input-cont
+			margin-top: 35px
+
+		.label
+			margin-bottom: 15px
+
+	.support
+		padding: 50px
+
+
+
+@media screen and (max-width: 1200px)
+
+	.lk
+		&-aside
+			margin-right: 25px
+
+			&__link
+				padding: 20px 25px
+
+		&-cont
+			width: calc(100% - 300px)
+
+			&-title
+				margin-bottom: 15px
+
+
+	.lk-treatment
+		&__item
+			&-top
+				padding: 20px
+
+			&-info-cont
+				padding: 20px
+
+	.support-search
+		padding: 30px
+
+		&__title
+			font-size: 1.3rem
+
+@media screen and (max-width: 1000px)
+
+	.lk
+		flex-direction: column
+
+		&-aside 
+			margin: 0 0 20px 0
+
+		&-cont
+			width: 100%
+
+	.lk-aside
+		&__links
+			display: flex
+			flex-direction: column
+			width: 100%
+			height: 50px
+			overflow: hidden
+
+			&.js__opened 
+				overflow: visible
+				z-index: 10
+				background: #fff
+
+		&__link
+			background: #fff
+			position: relative
+			z-index: 10
+			padding: 13px 25px
+
+			&.active 
+				order: -1
+
+				&:after 
+					content: ''
+					position: absolute
+					right: 20px
+					top: calc(50% - 4px)
+					display: block
+					size: 8px
+					border-right: 1px solid #fff
+					border-bottom: 1px solid #fff
+					transform: rotate(45deg)
+
+	.lk-treatment
+		&__item
+			&-top
+				flex-direction: column
+
+		&-no
+			padding: 20px
+
+	.support
+		padding: 35px
+
+	.lk-events
+		&__item
+			&-top
+				padding: 20px 30px
+
+			&-info
+				padding: 30px 30px
+
+	.auth
+		.forms__input-cont
+			width: calc((100% - 40px * 2) / 2)
+			margin: 0 0 25px 40px
+
+		.forms__submit-cont
+			margin-top: 35px
+
+	.registration
+		.forms
+			&-wrap 
+				&:not(:first-child)
+					margin-top: 20px
+					
+			&-radio
+				margin: 0 0 25px 40px
+
+			&__input-cont
+				margin: 0 0 25px 40px
+				width: calc((100% - 40px * 2) / 2)
+
+			&__info
+				max-width: 450px
+				margin-left: 30px
+
+				a 
+					color: #C39367
+
+
+@media screen and (max-width: 660px)
+
+	.lk-cont-title
+		flex-direction: column
+
+		span
+			font-size: 1.3rem
+
+	.support
+		padding: 20px
+
+		&-num
+			margin-bottom: 10px
+
+		&-search
+			padding: 20px
+			margin: 0 -20px
+			border: 0
+
+			&__title
+				font-size: 1.1rem
+
+			.label
+				font-size: 1rem
+
+			&__input
+				flex-direction: column
+				align-items: flex-start
+
+				.btn
+					margin-top: 20px
+
+		&-form 
+			.forms__input-cont
+				width: 100%
+				margin: 0 0 25px 40px
+
+				&.forms__input-cont--textarea
+					width: 100%
+
+	.personal-data 
+		.forms__input-cont
+			width: 100%
+			margin: 0 0 25px 40px
+
+		&-pass
+			margin-top: 30px
+
+			.forms__title
+				margin-bottom: 10px
+
+			.forms-submit-cont
+				margin-top: 30px
+
+	.personal-user
+		&__top
+			flex-direction: column
+			margin-bottom: 25px
+
+		&__photo
+			margin: 0 0 20px 0
+
+			img 
+				display: block
+
+		&__close
+			position: absolute
+			top: 0
+			right: 0
+
+
+		&__item
+			position: relative
+			flex-direction: column
+
+		.bot
+			flex-wrap: wrap
+			margin: 0 0 -20px -20px
+
+		.top
+			margin-bottom: 20px
+
+		.item
+			width: calc((100% - 20px * 2) / 2)
+			margin: 0 0 20px 20px
+
+			&:not(:last-child)
+				margin-right: 0
+
+	.lk-events
+		&__item
+			&-top
+				padding: 20px
+				flex-direction: column-reverse
+				align-items: flex-start
+
+			&-date
+				margin: 0 0 20px 0
+
+			&-info
+				padding: 20px
+
+	.auth
+		.forms__input-cont
+			width: 100%
+			margin: 0 0 25px 40px
+
+	.registration
+		.forms
+			&-wrap 
+				&:not(:first-child)
+					margin-top: 20px
+					
+			&-radio
+				margin: 0 0 25px 40px
+
+			&__input-cont
+				margin: 0 0 25px 40px
+				width: 100%
+
+			&__info
+				margin: 20px 0 0 0
+
+
+	.forms-wrap--bot
+		margin-top: 30px
+		flex-direction: column
+
+
+
+
+
+
+					
+
+

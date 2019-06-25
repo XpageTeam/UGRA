@@ -1,0 +1,62 @@
+footer.footer
+	.scroll-top
+		span
+			img(src="img/ico-logo-scroll.svg", alt="")
+		span Наверх
+
+	.wrapper
+		.footer__cont
+			.footer__top
+				.footer-logo
+					img(src="img/logo-footer.svg", alt="")
+				.footer-menu
+					a(href="").footer__link О центре
+					a(href="").footer__link Реестр получателей поддержки
+					a(href="").footer__link Полезные ссылки
+				.foote-btn
+					a(href="#").btn Оставить заявку
+			.footer__middle
+				.footer__middle-item.ico-phone
+					span
+						svg.ico
+							use(xlink:href="#ico-phone")
+					a(href="tel: 8-800-30-30-123") 8-800-30-30-123
+
+				.footer__middle-item.ico-email
+					span
+						svg.ico
+							use(xlink:href="#ico-mail")
+					a(href="mailto: start@msp03.ru") start@msp03.ru
+				.footer__middle-item.ico-clock
+					span
+						svg.ico
+							use(xlink:href="#ico-clock")
+					span 8:30 - 17:30
+			.footer__bot
+				.footer__copy 
+					span © Мой бизнес, 2019
+					span 
+						a(href="#") Политика конфиденциальности
+
+				.footer__soc
+					.soc
+						a.soc__link(href="#") 
+							img(src="img/ico-facebook.svg")
+						a.soc__link(href="#") 
+							img(src="img/ico-inst.svg")
+						a.soc__link(href="#") 
+							img(src="img/ico-vk.svg")
+						a.soc__link(href="#") 
+							img(src="img/ico-wifi.svg")
+
+
+				.footer__dev
+					a.developer(href="#")
+						span.developer__img
+							include ../../img/ico-dev.svg
+
+#sprite(style="display: none")
+	<!-- Эту свг нужно вставлять инклюдом, т.к. она может меняться -->
+	include ../symbol/sprite.svg
+
+
