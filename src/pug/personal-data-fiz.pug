@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Личны кабинет - Личные данные (Физ. лица)
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		main#content
+			.wrapper
+				.content
+					.title-block__cont
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									a.bread-crumbs__link(href="#") Личный кабинет
+									span.bread-crumbs__this Личные данные
+							.title-block__title
+								h1 Личный кабинет
+					.content-main-cont
+						.content-main
+							.lk
+								aside.lk-aside
+									.lk-aside__links
+										each link, i in ["Ваши обращения", "Доступные виды поддержки", "Личные данные", "Вопрос-ответ", "Мероприятия", "Онлайн запись", "Получить поддержку", ]
+											if (i == 0)
+												a(href="#").lk-aside__link.active=link
+											else
+												a(href="#").lk-aside__link=link
+								.lk-cont
+									.lk-cont-title 
+										span Личные данные
+										a(href="#").convert Преобразовать в компанию
+									.lk-personal-data
+										.personal-data
+											form(action="")
+												.personal-data-info
+													.forms-wrap
+														.forms__input-cont
+															input(placeholder="" type="text").forms__input
+															label.forms__label Имя
+															.forms__error-message
+																i.forms__error-message-icon
+														.forms__input-cont
+															input(placeholder="" type="text").forms__input
+															label.forms__label Фамилия
+															.forms__error-message
+																i.forms__error-message-icon
+														.forms__input-cont
+															input(placeholder="" type="text").forms__input
+															label.forms__label Отчество
+															.forms__error-message
+																i.forms__error-message-icon
+														.forms__input-cont
+															input(placeholder="" type="text").forms__input
+															label.forms__label E-mail
+															.forms__error-message
+																i.forms__error-message-icon
+														.forms__input-cont
+															input(placeholder="" type="text").forms__input
+															label.forms__label Телефон
+															.forms__error-message
+																i.forms__error-message-icon
+														.forms__input-cont
+															input(placeholder="" type="text").forms__input
+															label.forms__label ИНН
+															.forms__error-message
+																i.forms__error-message-icon
+												.personal-data-pass
+													.forms__title Смена пароля
+													.forms__text Введите свой текущий пароль, новый пароль и повторите ввод нового пароля, что бы исключить возможность опечатки
+													.forms-wrap
+														.forms__input-cont
+															input(placeholder="" type="text").forms__input
+															label.forms__label Текущий пароль
+															.forms__error-message
+																i.forms__error-message-icon
+														.forms__input-cont
+															input(placeholder="" type="text").forms__input
+															label.forms__label Новый пароль
+															.forms__error-message
+																i.forms__error-message-icon
+														.forms__input-cont
+															input(placeholder="" type="text").forms__input
+															label.forms__label Повторить пароль
+															.forms__error-message
+																i.forms__error-message-icon
+														
+													.forms-submit-cont
+														input(type="submit" value="Сохранить изменения").forms__submit.btn
+		include inc/scripts.pug

@@ -6,7 +6,6 @@ html(lang="ru")
 		include inc/head.pug
 		include inc/css.pug
 	body.inner.loading
-		include inc/header.pug
 		main#content
 			.wrapper
 				.content
@@ -16,7 +15,7 @@ html(lang="ru")
 								.bread-crumbs
 									a.bread-crumbs__link(href="#") Главная
 									a.bread-crumbs__link(href="#") Личный кабинет
-									span.bread-crumbs__this Обращения
+									span.bread-crumbs__this Ваши обращения
 							.title-block__title
 								h1 Личный кабинет
 					.content-main-cont
@@ -24,10 +23,11 @@ html(lang="ru")
 							.lk
 								aside.lk-aside
 									.lk-aside__links
-										a(href="").lk-aside__link.active Обращения
-										a(href="").lk-aside__link Доступные виды поддержки
-										a(href="").lk-aside__link Личные данные
-										a(href="").lk-aside__link Мероприятия
+										each link, i in ["Ваши обращения", "Доступные виды поддержки", "Личные данные", "Вопрос-ответ", "Мероприятия", "Онлайн запись", "Получить поддержку", ]
+											if (i == 0)
+												a(href="#").lk-aside__link.active=link
+											else
+												a(href="#").lk-aside__link=link
 								.lk-cont
 									.lk-cont-title 
 										span Обращения
@@ -48,7 +48,7 @@ html(lang="ru")
 														a(href="") Паспорт гражданина Российской Федерации
 											.lk-treatment__item
 												.lk-treatment__item-top
-													.lk-treatment__item-title МФЦ для бизнеса с комфортом
+													.lk-treatment__item-title Предоставление поручительства
 													.status.status--expertiza-completed
 														span 
 														| Экономическая экспертиза пройдена
@@ -61,7 +61,7 @@ html(lang="ru")
 														a(href="") Паспорт гражданина Российской Федерации
 											.lk-treatment__item
 												.lk-treatment__item-top
-													.lk-treatment__item-title МФЦ для бизнеса с комфортом
+													.lk-treatment__item-title Общее
 													.status.status--support-no 
 														span 
 														| Поддержка не оказана
@@ -74,7 +74,7 @@ html(lang="ru")
 														a(href="") Паспорт гражданина Российской Федерации
 											.lk-treatment__item
 												.lk-treatment__item-top
-													.lk-treatment__item-title МФЦ для бизнеса с комфортом
+													.lk-treatment__item-title Онлайн запись на услуги с сайта
 													.status.status--await
 														span 
 														| Ожидание клиента
@@ -84,8 +84,5 @@ html(lang="ru")
 														.lk-treatment__info-date 03.04.2019
 													.lk-treatment__item-docs
 														a(href="") Паспорт гражданина Российской Федерации
-														a(href="") Паспорт гражданина Российской Федерации
-								
-
-		include inc/footer.pug
+														a(href="") Паспорт гражданина Российской Федерации 
 		include inc/scripts.pug

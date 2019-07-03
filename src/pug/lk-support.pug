@@ -6,7 +6,6 @@ html(lang="ru")
 		include inc/head.pug
 		include inc/css.pug
 	body.inner.loading
-		include inc/header.pug
 		main#content
 			.wrapper
 				.content
@@ -24,10 +23,11 @@ html(lang="ru")
 							.lk
 								aside.lk-aside
 									.lk-aside__links
-										a(href="").lk-aside__link Обращения
-										a(href="").lk-aside__link.active Доступные виды поддержки
-										a(href="").lk-aside__link Личные данные
-										a(href="").lk-aside__link Мероприятия
+										each link, i in ["Ваши обращения", "Доступные виды поддержки", "Личные данные", "Вопрос-ответ", "Мероприятия", "Онлайн запись", "Получить поддержку", ]
+												if (i == 0)
+													a(href="#").lk-aside__link.active=link
+												else
+													a(href="#").lk-aside__link=link
 								.lk-cont
 									.lk-cont-title 
 										span Доступные виды поддержки
@@ -104,8 +104,4 @@ html(lang="ru")
 														label.forms__label Комментарий
 												.forms__submit-cont
 													input(type="submit" value="Отправить заявку").forms__submit.btn
-										
-								
-
-		include inc/footer.pug
 		include inc/scripts.pug
