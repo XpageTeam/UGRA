@@ -43,7 +43,7 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = [{
 	entry: {
 		polyfill: "babel-polyfill",
-		common: "./src/js/common.js",
+		lc: "./src/js/lc.js",
 		special: "./src/js/special.js",
 		// "special-switcher": "./src/ts/special-switcher.ts",
 		// special: "./src/ts/special.ts"
@@ -56,11 +56,6 @@ module.exports = [{
 	devtool: devtool,
 	module: {
 		rules: [
-			{
-				test: /\.ts$/,
-				loader: "ts-loader",
-				// exclude: /node_modules/,
-			},
 			{
 				test: /\.js$/,
 				loader: "babel-loader",

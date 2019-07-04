@@ -264,6 +264,7 @@
 		display: flex
 		align-items: center
 		line-height: 1
+		color: #EE2D2D
 
 		&:before 
 			content: ''
@@ -310,6 +311,7 @@
 	.user-name
 		font-size: rem(16)
 		font-weight: 600
+		margin-bottom: 10px
 
 	.label
 		font-size: rem(14)
@@ -374,38 +376,62 @@
 
 
 .lk-events
+
+	&__no-more
+		font-weight: 600
+		text-align: center
+		background: #F3F6F9
+		margin: 54px 0 0
+		padding: 32px 30px 31px
+		font-size: 18px
+		line-height: 1
+
 	&__item
 		border: 1px solid var(--backgroundColor)
 		margin-top: 40px
 
-		&.js__open
-			.lk-events__item-btn:before
-				transform: rotate(180deg)
+		&.js__opened
+
+			.lk-events__item-top:after
+				transform: rotateZ(-135deg)
+
+			.event-info
+				font-size: rem(14)
+
+				&__more
+					display: block
 
 
 		&-top
 			background: var(--backgroundColor)
-			padding: 20px 50px
+			padding: 20px 85px 20px 50px
 			display: flex
 			justify-content: space-between
 			align-items: center
+			position: relative
+			cursor: pointer
+
+			&:after
+				content: ""
+				size: 7px
+				border-right: 1px solid #000
+				border-bottom: 1px solid #000
+				transform: rotateZ(45deg)
+				position: absolute calc(50% - 4px) 40px * *
 
 		&-title
 			font-size: rem(16)
 			font-weight: 600
+			max-width: 530px
 
-		&-date
+		&-city
 			padding: 10px 15px
 			border-radius: 18px
-			background: #E5EBF0
-			color: #9BAABB
+			color: #fff #C39367
 			font-size: rem(13)
 			line-height: 1
 			margin-left: 20px
-
-			&.active
-				background: var(--secondColor)
-				color: #fff
+			white-space: nowrap
 
 		&-next
 			display: none
@@ -466,6 +492,43 @@
 
 			a 
 				color: #C39367
+
+.event-info
+	font-size: rem(14)
+	max-width: 610px
+
+	&__more
+		display: none
+		margin: 30px 0 0
+
+		&-btns
+			margin: 25px 0 0
+
+			.btn, .second-btn
+
+				&:not(:last-child)
+					margin-right: 35px
+
+	&__props
+
+		tr
+
+			&:not(:last-child)
+
+				td
+					padding-bottom: 19px
+
+		td
+
+			&:not(:last-child)
+				padding-right: 30px
+
+.event-prop
+
+	&__title
+		color: #9BAABB
+		margin: 0 0 7px
+
 
 @media screen and (max-width: 1500px)
 
@@ -589,6 +652,8 @@
 
 			&-info
 				padding: 30px 30px
+
+
 
 	.auth
 		.forms__input-cont
