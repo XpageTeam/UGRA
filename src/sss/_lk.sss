@@ -33,22 +33,31 @@
 				font-size: rem(22)
 				font-weight: 600
 
-			.convert
+			.convert, .question
 				position: relative
 				line-height: 1
 				display: flex
 				align-items: center
 
-				&:before 
+				&:before
 					content: ''
 					display: inline-block
 					margin-right: 15px
 					size: 24px
 					background-color: var(--secondColor)
 					border-radius: 50%
-					background-image: url('../img/ico-group.svg')
 					background-position: center
 					background-repeat: no-repeat
+
+			.question
+
+				&:before
+					background-image: url("../img/ico-question.svg")
+
+			.convert
+
+				&:before 
+					background-image: url('../img/ico-group.svg')
 
 	&-treatment
 		&__list
@@ -114,7 +123,6 @@
 					size: 4px 10px
 					transform: rotate(45deg)
 					display: block
-					position: absolute
 					left: calc(50% - 2px)
 					top: calc(50% - 5px)
 					border-right: 1px solid #000 
@@ -130,7 +138,6 @@
 					size: 4px 10px
 					transform: rotate(45deg)
 					display: block
-					position: absolute
 					left: calc(50% - 2px)
 					top: calc(50% - 5px)
 					border-right: 1px solid #fff 
@@ -424,14 +431,26 @@
 			font-weight: 600
 			max-width: 530px
 
-		&-city
+		&-city, &-date
 			padding: 10px 15px
 			border-radius: 18px
-			color: #fff #C39367
 			font-size: rem(13)
 			line-height: 1
 			margin-left: 20px
 			white-space: nowrap
+			user-select: none
+
+		&-date
+			transition: background-color .3s ease, color .3s ease
+
+			&:not(.active)
+				color: #9BAABB #E5EBF0
+
+			&.active
+				color: #fff var(--secondColor)
+
+		&-city
+			color: #fff #C39367
 
 		&-next
 			display: none
@@ -473,7 +492,15 @@
 	.forms__submit-cont
 		margin-top: 65px
 
+.registration, .lk-write__radio
+	
+	.forms
+
+		&-radio
+			margin: 0 0 25px 40px
+
 .registration
+
 	.forms
 		&-wrap 
 			&:not(:first-child)
@@ -529,6 +556,81 @@
 		color: #9BAABB
 		margin: 0 0 7px
 
+
+.lk-write
+
+	&__accordion
+		margin: 50px 0 0
+
+	&__form
+		margin: 38px 0 0
+
+.lc-accordion
+
+	&__item
+
+		&:not(:first-child)
+			margin: 30px 0 0
+
+			.accordion-item
+				border-radius: 5px
+				border: 1px solid #ECF1F6
+
+.accordion-item
+
+	&__title
+		cursor: pointer
+		display: flex
+		align-items: center
+		background: #F3F6F9
+		border-radius: 5px
+		padding: 17px 45px 17px 17px
+		position: relative
+
+		&:after
+			content: ""
+			size: 7px
+			border-right: 1px solid #000
+			border-bottom: 1px solid #000
+			transform: rotateZ(45deg)
+			position: absolute calc(50% - 4px) 30px * *
+
+		&-icon
+			flex: none 
+			margin-right: 15px
+
+			img
+				display: block
+
+		&-text
+			font-weight: 600
+			font-size: 16px
+
+	&__content
+		padding: 30px 0 0
+
+	&:not(.js__opened)
+
+		.accordion-item__content
+			display: none
+
+.lc-list
+
+	&__item
+
+		&-input
+			display: none
+
+			&:checked
+
+				+ label
+					background: #F3F6F9
+
+		&-label
+			cursor: pointer
+			transition: background .3s ease
+			display: block
+			padding: 10px 20px
 
 @media screen and (max-width: 1500px)
 

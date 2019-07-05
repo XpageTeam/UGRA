@@ -6,7 +6,6 @@ html(lang="ru")
 		include inc/head.pug
 		include inc/css.pug
 	body.inner.loading
-		include inc/header.pug
 		main#content
 			.wrapper
 				.content
@@ -22,7 +21,13 @@ html(lang="ru")
 						.content-main
 							ul
 								li
-									a(href="#convert").fancybox Преобразовать в компанию
+									a(href="#convert").btn.fancybox Преобразовать в компанию
+								li
+									br
+									a(href="#event-write").btn.fancybox Записаться на мероприятие
+								li
+									br
+									a(href="#cant-write").btn.fancybox Не смогли записаться?
 
 
 					#convert.popup-form.convert
@@ -38,9 +43,93 @@ html(lang="ru")
 							.forms-submit-cont
 								input(type="submit" value="Преобразовать").forms__submit.btn
 
+					#event-write.popup-form
+						.popup-form__title.popup-form__title--center Записаться на мероприятие
+						form(action="")
+							.forms-wrap.forms-wrap--3
+								.forms__input-cont
+									input.forms__input(placeholder="" type="text" required="")
+									label.forms__label Имя
+									.forms__error-message
+										i.forms__error-message-icon
+								.forms__input-cont
+									input.forms__input(placeholder="" type="text" required="")
+									label.forms__label Фамилия
+									.forms__error-message
+										i.forms__error-message-icon
+								.forms__input-cont
+									input.forms__input(placeholder="" type="text" required="")
+									label.forms__label Отчество
+									.forms__error-message
+										i.forms__error-message-icon
+								.forms__input-cont
+									input.forms__input(placeholder="" type="tel" required="")
+									label.forms__label Телефон
+									.forms__error-message
+										i.forms__error-message-icon
+								.forms__input-cont
+									input.forms__input(placeholder="" type="email" required="")
+									label.forms__label E-mail
+									.forms__error-message
+										i.forms__error-message-icon
+								.forms__input-cont
+									input.forms__input(placeholder="" type="text")
+									label.forms__label Наименование компании
+									.forms__error-message
+										i.forms__error-message-icon
+								.forms__input-cont
+									input.forms__input(placeholder="" type="tel" required="")
+									label.forms__label ИНН
+									.forms__error-message
+										i.forms__error-message-icon
+							.forms-submit-cont
+								.forms-submit-cont__btn
+									input(type="submit" value="Преобразовать").forms__submit.btn
+								.forms-submit-cont__text
+									.forms-req Нажимая кнопку, Вы даёте информированное согласие
+										br
+										| на 
+										a(href="#") обработку своих персональных данных
 
-
-								
-
-		include inc/footer.pug
+					#cant-write.popup-form
+						.popup-form__title.popup-form__title--center Не смогли записаться?
+						form(action="")
+							.forms-wrap.forms-wrap--2
+								.forms__input-cont
+									input.forms__input(placeholder="" type="text" required="")
+									label.forms__label Имя
+									.forms__error-message
+										i.forms__error-message-icon
+								.forms__input-cont
+									input.forms__input(placeholder="" type="text" required="")
+									label.forms__label Фамилия
+									.forms__error-message
+										i.forms__error-message-icon
+								.forms__input-cont
+									input.forms__input(placeholder="" type="email" required="")
+									label.forms__label E-mail
+									.forms__error-message
+										i.forms__error-message-icon
+								.forms__input-cont
+									input.forms__input(placeholder="" type="tel" required="")
+									label.forms__label Телефон
+									.forms__error-message
+										i.forms__error-message-icon
+								.forms__input-cont.forms__input-cont--full
+									textarea.forms__input(required="")
+									label.forms__label Описание проблемы
+									.forms__error-message
+										i.forms__error-message-icon
+								.forms__input-cont.forms__input-cont--full
+									input.forms__input.forms__input--file(type="file" id="file")
+									input.forms__input.forms__input--file-support(type="text" placeholder="jpg, pdf, png" readonly)
+									label.forms__label.forms__label--file(for="file") Документ
+							.forms-submit-cont
+								.forms-submit-cont__btn
+									input(type="submit" value="Преобразовать").forms__submit.btn
+								.forms-submit-cont__text
+									.forms-req Нажимая кнопку, Вы даёте информированное согласие
+										br
+										| на 
+										a(href="#") обработку своих персональных данных
 		include inc/scripts.pug

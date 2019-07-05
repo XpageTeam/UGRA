@@ -13,8 +13,25 @@
 		&.forms__input-cont--textarea
 			width: 100%
 
+#event-write
+	max-width: 1170px !important
+
+.forms-submit-cont
+	margin-top: 40px
+	display: flex
+	align-items: center
+
+	&__btn
+		margin-right: 40px
+	
+	&__text
+
+		a
+			color: var(--secondColor)
 
 .popup-form
+	display: none
+	max-width: 800px !important
 
 	&.fancybox-content
 		padding: rem(38) rem(47) rem(44)
@@ -27,26 +44,15 @@
 		font-weight: 600
 		color: #000
 
+		&--center
+			text-align: center
+
 	&__text 
 		text-align-last: auto
 		color: #000
 		font-size: rem(14)
 		color: #9BAABB
 		margin-bottom: 30px
-
-	textarea
-		width: 100%
-		min-width: 100%
-		max-width: 100%
-
-		padding-top: 10px
-		padding-bottom: 10px
-		min-height: 100px !important
-
-	.forms-submit-cont
-		margin-top: 40px
-
-
 
 	
 
@@ -162,6 +168,29 @@
 	// .forms__input-cont
 	// 	width: calc((100% - 40px * 2) / 2)
 	// 	margin: 0 0 25px 40px 
+	// 	
+	
+	&--2, &--3
+
+		.forms__input-cont
+			margin: 0 0 25px 40px
+
+			&--full
+				width: calc(100% - 40px) !important
+	
+	&--2
+
+		.forms__input-cont
+			width: calc((100% - 40px * 2) / 2)
+
+	
+	&--3
+
+		.forms__input-cont
+			width: calc((100% - 40px * 3) / 3)
+
+			&--full
+				width: calc((133.33% - 40px * 2) / 2) !important
 
 	&--column
 		flex-direction: column
@@ -211,15 +240,21 @@
 		&--file
 			display: none
 
-			&-support 
-				pointer-events: none
-
 
 
 		&-cont
 			position: relative
 			display: flex
 			flex-direction: column-reverse
+
+			textarea
+				width: 100%
+				min-width: 100%
+				max-width: 100%
+
+				padding-top: 10px
+				padding-bottom: 10px
+				min-height: 130px !important	
 
 
 		&[required] ~ label
@@ -238,23 +273,26 @@
 		flex: none
 		color: #666666
 		transition: top .3s ease
-		pointer-events: none
 
 		&--file
+			pointer-events: none
+
 			&:before
-				content: attr(data-btn-text)
+				content: ""
 				position: absolute
-				pointer-events: all
-				background: url('../img/ico-clip.png') center no-repeat, #f4f4f4
-				right: 0
 				bottom: 0
+				right: 0
+				size: 58px 55px
+				background: url("../img/ico-file.svg") center no-repeat, #CAD4DF
+				border-radius: 0 5px 5px 0
 				cursor: pointer
-				height: 62px
-				width: 60px
-				text-align: right
-				line-height: 49px
-				box-sizing: border-box
-				padding-right: 0.83333vw
+				pointer-events: auto
+				transition: background-color .3s ease
+
+			&:hover
+
+				&:before
+					background-color: var(--secondColor)
 
 	&__error-message
 		position: absolute

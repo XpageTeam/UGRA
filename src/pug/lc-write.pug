@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Личны кабинет - Онлайн-запись
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		main#content
+			.wrapper
+				.content
+					.title-block__cont
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									a.bread-crumbs__link(href="#") Личный кабинет
+									span.bread-crumbs__this Онлайн-запись
+							.title-block__title
+								h1 Личный кабинет
+					.content-main-cont
+						.content-main
+							.lk
+								aside.lk-aside
+									.lk-aside__links
+										each link, i in ["Ваши обращения", "Доступные виды поддержки", "Личные данные", "Вопрос-ответ", "Мероприятия", "Онлайн запись", "Получить поддержку", ]
+											if (i == 0)
+												a(href="#").lk-aside__link.active=link
+											else
+												a(href="#").lk-aside__link=link
+								.lk-cont
+									.lk-cont-title 
+										span Мероприятия
+										a(href="#").question Не смогли записаться?
+
+									.lk-write
+										form(action="#")
+											.lk-write__radio
+												.forms-wrap
+													.forms-radio
+														input.radio__input(ty pe="radio" id="11" name="radio")
+														label.radio__label(for="11") Физическое лицо
+													.forms-radio
+														input.radio__input(type="radio" id="12" name="radio")
+														label.radio__label(for="12") Юридическое лицо
+											.lk-write__accordion
+												.lc-accordion
+													.lc-accordion__item
+														.accordion-item.js__opened
+															.accordion-item__title
+																.accordion-item__title-icon
+																	img(src="img/ico-calendar.svg")
+																.accordion-item__title-text Выбрать дату
+															.accordion-item__content
+																.calendar
+																	.calendar-top
+																		.calendar__title Календарь 
+																		.calendar-top__filter
+																			.calendar-filter
+																				.calendar-filter__select
+																					select
+																						option(value='1') Январь
+																						option(value='2') Февраль
+																						option(value='3', selected='') Март
+																						option(value='4') Апрель
+																						option(value='5') Май
+																						option(value='6') Июнь
+																						option(value='7') Июль
+																						option(value='8') Август
+																						option(value='9') Сентябрь
+																						option(value='10') Октябрь
+																						option(value='11') Ноябрь
+																						option(value='12') Декабрь
+																				.calendar-filter__select
+																					select
+																						option(value='13') 2017
+																						option(value='14') 2018
+																						option(value='15', selected='') 2019
+
+																	.calendar-body-cont
+																		.calendar-body
+																			.calendar-row
+																				span.calendar__cell.calendar__cell--another 25
+																				span.calendar__cell.calendar__cell--another 26
+																				span.calendar__cell.calendar__cell--another 27
+																				span.calendar__cell.calendar__cell--another 28
+																				span.calendar__cell 1 
+																				span.calendar__cell 2
+																				span.calendar__cell 3
+																			.calendar-row
+																				span.calendar__cell.calendar__cell--another 4 
+																				span.calendar__cell.calendar__cell--another 5 
+																				a.calendar__cell.calendar__cell--link.active 6 
+																				a.calendar__cell.calendar__cell--link 7
+																				a.calendar__cell.calendar__cell--link 8
+																				span.calendar__cell 9
+																				span.calendar__cell 10
+																			.calendar-row
+																				a.calendar__cell.calendar__cell--link 11 
+																				a.calendar__cell.calendar__cell--link 12 
+																				a.calendar__cell.calendar__cell--link 13 
+																				a.calendar__cell.calendar__cell--link 14 
+																				a.calendar__cell.calendar__cell--link 15 
+																				span.calendar__cell 16
+																				span.calendar__cell 17
+																			.calendar-row
+																				a.calendar__cell.calendar__cell--link 18 
+																				a.calendar__cell.calendar__cell--link 19 
+																				a.calendar__cell.calendar__cell--link 20 
+																				a.calendar__cell.calendar__cell--link 21 
+																				a.calendar__cell.calendar__cell--link 22 
+																				span.calendar__cell 23
+																				span.calendar__cell 24
+																			.calendar-row
+																				a.calendar__cell.calendar__cell--link 25 
+																				a.calendar__cell.calendar__cell--link 26 
+																				a.calendar__cell.calendar__cell--link 27 
+																				a.calendar__cell.calendar__cell--link 28 
+																				a.calendar__cell.calendar__cell--link 29
+																				span.calendar__cell 30
+																				span.calendar__cell 31
+													.lc-accordion__item
+														.accordion-item
+															.accordion-item__title
+																.accordion-item__title-icon
+																	img(src="img/ico-service.svg")
+																.accordion-item__title-text Выбрать услугу
+															.accordion-item__content
+																.lc-list
+																	- for (let i = 1; i < 5; i++)
+																		.lc-list__item
+																			if (i == 2)
+																				input.lc-list__item-input(type="radio" id="lc-rad-"+i name="service" checked="")
+																			else
+																				input.lc-list__item-input(type="radio" id="lc-rad-"+i name="service")
+																			label.lc-list__item-label(for="lc-rad-"+i)="Услуга "+i 
+													.lc-accordion__item
+														.accordion-item
+															.accordion-item__title
+																.accordion-item__title-icon
+																	img(src="img/ico-online-time.svg")
+																.accordion-item__title-text Выбрать время
+															.accordion-item__content
+																.lc-list
+																	each time, i in ["8:00 - 10:00 ", "10:00 - 12:00", "12:00 - 14:00", "14:00 - 16:00", ]
+																		.lc-list__item
+																			if (i == 2)
+																				input.lc-list__item-input(type="radio" id="lc-time-"+i name="time" checked="")
+																			else
+																				input.lc-list__item-input(type="radio" id="lc-time-"+i name="time")
+																			label.lc-list__item-label(for="lc-time-"+i)=time
+											.lk-write__form
+												.write-form
+													.forms-wrap.forms-wrap--3
+														.forms__input-cont
+															input.forms__input(type="text" required="")
+															label.forms__label Имя
+														.forms__input-cont
+															input.forms__input(type="text" required="")
+															label.forms__label Фамилия
+														.forms__input-cont
+															input.forms__input(type="text")
+															label.forms__label Отчество
+														.forms__input-cont
+															input.forms__input(type="email" required="")
+															label.forms__label E-mail
+														.forms__input-cont
+															input.forms__input(type="tel" required="")
+															label.forms__label Телефон
+														.forms__input-cont
+															input.forms__input(type="text")
+															label.forms__label ИНН
+														.forms__input-cont.forms__input-cont--full
+															textarea.forms__input
+															label.forms__label Ваш вопрос
+													.forms-submit-cont
+														.forms-submit-cont__btn
+															input(type="submit" value="Преобразовать").forms__submit.btn
+														.forms-submit-cont__text
+															.forms-req Нажимая кнопку, Вы даёте информированное согласие
+																br
+																| на 
+																a(href="#") обработку своих персональных данных
+		include inc/scripts.pug

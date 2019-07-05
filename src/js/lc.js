@@ -1,5 +1,10 @@
-import {Element as element} from "./Element.js"
-import App from "./core.js"
+import $ from "jquery"
+
+window.$ = $;
+window.jQuery = $;
+
+require("./jquery.fancybox.js");
+require("../css/jquery.fancybox.css");
 
 ;(function() {
 
@@ -11,7 +16,6 @@ import App from "./core.js"
       Element.prototype.webkitMatchesSelector ||
       Element.prototype.mozMatchesSelector ||
       Element.prototype.msMatchesSelector;
-
   }
 
 })()
@@ -36,6 +40,17 @@ import App from "./core.js"
 })()
 
 document.addEventListener("DOMContentLoaded", e => {
+    $(".fancybox").fancybox({
+        trapFocus: false,
+        touch: false,
+        buttons: ["fullscreen", "slideShow", "close"],
+        image: {
+            preload: true,
+        },
+        transitionEffect: "slide",
+    });
+
+
 	;(function(){
 		const eventTitles = document.querySelectorAll(".lk-events__item-top");
 
@@ -50,14 +65,62 @@ document.addEventListener("DOMContentLoaded", e => {
 					this.closest(".lk-events__item").classList.add("js__opened")
 			})
 	})()
+
+    ;(function(){
+        const eventTitles = document.querySelectorAll(".accordion-item__title");
+
+        if (!eventTitles.length)
+            return
+
+        for (let title of eventTitles)
+            title.addEventListener("click", function(){
+                if (this.closest(".accordion-item").classList.contains("js__opened"))
+                    this.closest(".accordion-item").classList.remove("js__opened")
+                else
+                    this.closest(".accordion-item").classList.add("js__opened")
+            })
+    })()
+
+    ;(function(){
+        const fileInputs = document.querySelectorAll(".forms__input--file");
+
+        if (!fileInputs.length)
+            return
+
+        for (let fileInput of fileInputs){
+            const textInput = fileInput.closest(".forms__input-cont")
+                            .querySelector(".forms__input--file-support");
+
+            fileInput.addEventListener("change", function(){
+                let files = [];
+
+                for (let file of this.files)
+                    files.push(file.name)
+
+                if (!files.length)
+                    textInput.value = ""
+                else
+                    textInput.value = files.join(",")
+
+            })
+
+            textInput.addEventListener("click", function(){
+                fileInput.click()
+            })
+        }
+    })()
 })
 
-// $(_ => {
-// 	$(".orders-desc__list-toggle").click(function(e){
-// 		e.preventDefault();
-		
-// 		let $prev = $(this).prev(".orders-desc__list");
+document.addEventListener("DOMContentLoaded", () => {
+    $('.lk-events__item-btn').click(function(){
+        const $this = $(this);
 
-// 		$prev.toggleClass("js__opened");
-// 	});
-// });
+        $this.closest('.lk-events__item').toggleClass('js__open');
+        $this.closest('.lk-events__item-info').find('.lk-events__item-next').slideToggle();
+
+        if ($this.text() == "Развернуть")
+            $this.text("Свернуть")
+        else
+            $this.text("Развернуть")
+    })
+})

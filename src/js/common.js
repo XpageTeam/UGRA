@@ -188,14 +188,6 @@ document.addEventListener("DOMContentLoaded", e => {
 	      },
 	});
 
-	$('.lk-events__item-btn').click(function(){
-		var $this = $(this);
-
-		$this.closest('.lk-events__item').toggleClass('js__open');
-		$this.closest('.lk-events__item-info').find('.lk-events__item-next').slideToggle();
-
-	})
-
 	
 
 	$('.story-success__btn').click(function(){
