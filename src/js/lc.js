@@ -123,4 +123,16 @@ document.addEventListener("DOMContentLoaded", () => {
         else
             $this.text("Развернуть")
     })
+
+    $('.lk-aside__link').click(function(e){
+        var $this = $(this);
+
+        if($this.hasClass('active')){
+            e.preventDefault();
+        }
+
+        $this.closest('.lk-aside__links').toggleClass('js__opened')
+        
+
+    })
 })

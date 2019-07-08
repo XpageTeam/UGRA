@@ -750,10 +750,10 @@
 	.lk-events
 		&__item
 			&-top
-				padding: 20px 30px
+				padding: 20px 75px 20px 30px
 
 			&-info
-				padding: 30px 30px
+				padding: 20px 30px
 
 
 
@@ -878,15 +878,29 @@
 	.lk-events
 		&__item
 			&-top
-				padding: 20px
+				padding: 20px 70px 20px 20px
 				flex-direction: column-reverse
 				align-items: flex-start
 
-			&-date
+			&-date, &-city
 				margin: 0 0 20px 0
 
 			&-info
 				padding: 20px
+
+	.event-info
+
+		&__props
+			display: block
+
+			tbody, tr, td
+				display: block
+
+			td, tr
+				padding: 0 !important
+
+				&:not(:first-child)
+					margin: 15px 0 0
 
 	.auth
 		.forms__input-cont
