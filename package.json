@@ -45,7 +45,7 @@
     "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-pngquant": "^6.0.1",
     "jquery": "^3.4.1",
-    "postcss": "^6.0.23",
+    "postcss": "^8.4.31",
     "postcss-assets": "^5.0.0",
     "postcss-attribute-case-insensitive": "^3.0.1",
     "postcss-data-packer": "^1.2.3",
